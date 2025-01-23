@@ -17,50 +17,19 @@ $font-color1: #3f7a71;
   padding: 0;
 }
 
-.header {
-  @include colorGroup();
-  min-height: 10vh;
-
-  display: flex;
-  justify-content: space-between;
-  padding-inline: 1rem;
-}
-
-.titleBrand {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-
-  img {
-    width: 30px;
-  }
-}
-
-.navLinks {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-  
-  a {
-    text-decoration: none;
-    color: $defaultFont-color;
-  }
-}
-
-.humbergerMenu {
-  background-color: $dark-color;
-  color: $defaultFont-color;
-  cursor: pointer;
-  border: none;
-  padding: 0.5rem 1rem;
-}
-
 .container {
-  min-height: 90vh;
+  min-height: 80vh;
   background-color: $container-color;
   color: $font-color1;
   padding: 1rem;
+}
+
+.storyItem {
+  border: 1px solid $dark-color;
+
+  .storyImage {
+    width: 150px;
+  }
 }
 
 .footer {

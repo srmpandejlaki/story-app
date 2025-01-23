@@ -39,11 +39,13 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin(
+      {
       title: 'Home',
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/views/index.html'),
-    }),
+      }
+    ),
 
     new CopyWebpackPlugin({
       patterns: [
