@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit';
 
 class StoryItem extends LitElement {
   static properties = {
+    id: { type: String },
     name: { type: String },
     description: { type: String },
   };
@@ -10,6 +11,9 @@ class StoryItem extends LitElement {
     .storyItem {
       width: 200px;
       border: 1px solid #333e4e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       .storyImage {
         width: 150px;
