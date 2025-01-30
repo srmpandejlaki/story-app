@@ -31,13 +31,13 @@ class Header extends LitElement {
     
       a {
         text-decoration: none;
-        color: $defaultFont-color;
+        color: #fff;
       }
     }
 
     .humbergerMenu {
-      background-color: $dark-color;
-      color: $defaultFont-color;
+      background-color: #333e4e;
+      color: white;
       cursor: pointer;
       border: none;
       padding: 0.5rem 1rem;
