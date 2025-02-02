@@ -37,7 +37,7 @@ class Navbar extends LitElement {
       flex-direction: column;
       gap: 2rem;
       list-style: none;
-      padding-inline: 1rem;
+      padding: 1rem;
     
       a {
         text-decoration: none;

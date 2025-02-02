@@ -18,8 +18,10 @@ $font-color1: #3f7a71;
 }
 
 .container {
-  width: 90%;
-  min-height: 90vh;
+  width: 85%;
+  position: absolute;
+  top: 0;
+  left: 15%;
   background-color: $container-color;
   color: $font-color1;
   padding: 1rem;
