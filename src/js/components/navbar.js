@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 
 class Navbar extends LitElement {
   static styles = css`
-    nav {
+    section {
       position: absolute;
       left: 0;
       top: 0;
@@ -13,6 +13,7 @@ class Navbar extends LitElement {
 
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       padding-inline: 1rem;
     }
 
@@ -36,27 +37,38 @@ class Navbar extends LitElement {
       flex-direction: column;
       gap: 2rem;
       list-style: none;
+      padding-inline: 1rem;
     
       a {
         text-decoration: none;
         color: #fff;
       }
     }
+
+    p {
+      text-align: center;
+      font-size: 0.65rem;
+    }
   `;
  
   render() {
     return html`
-      <nav>
-        <div class="titleBrand">
-          <img src="favicon.png" alt="Story App Logo" />
-          <h1>My Story App</h1>
+      <section>
+        <nav>
+          <div class="titleBrand">
+            <img src="favicon.png" alt="Story App Logo" />
+            <h1>My Story App</h1>
+          </div>
+          <ul class="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Form</a></li>
+            <li><a href="#">Developer</a></li>
+          </ul>
+        </nav>
+        <div class="footer">
+          <p>&copy; 2024 My Story App.<br>All rights reserved.</p>
         </div>
-        <ul class="navLinks">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Form</a></li>
-          <li><a href="#">Developer</a></li>
-        </ul>
-      </nav>
+      </section>
     `;
   }
 }
