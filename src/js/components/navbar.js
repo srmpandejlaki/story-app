@@ -1,14 +1,18 @@
 import { LitElement, html, css } from 'lit';
 
-class Header extends LitElement {
+class Navbar extends LitElement {
   static styles = css`
     nav {
+      position: absolute;
+      left: 0;
+      top: 0;
       background-color: #333e4e;
       color: #fff;
-      min-height: 10vh;
+      height: 100vh;
+      width: 10%;
 
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       padding-inline: 1rem;
     }
 
@@ -21,11 +25,15 @@ class Header extends LitElement {
       img {
         width: 30px;
       }
+
+      h1 {
+        font-size: 1rem;
+      }
     }
 
     .navLinks {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 2rem;
       list-style: none;
     
@@ -34,19 +42,11 @@ class Header extends LitElement {
         color: #fff;
       }
     }
-
-    .humbergerMenu {
-      background-color: #333e4e;
-      color: white;
-      cursor: pointer;
-      border: none;
-      padding: 0.5rem 1rem;
-    }
   `;
  
   render() {
     return html`
-      <nav class="header">
+      <nav>
         <div class="titleBrand">
           <img src="favicon.png" alt="Story App Logo" />
           <h1>My Story App</h1>
@@ -56,10 +56,9 @@ class Header extends LitElement {
           <li><a href="#">Form</a></li>
           <li><a href="#">Developer</a></li>
         </ul>
-        <button id="humbergerMenu" class="humbergerMenu"><i class="fa-solid fa-bars"></i></button>
       </nav>
     `;
   }
 }
 
-customElements.define('header-section', Header);
+customElements.define('navbar-section', Navbar);

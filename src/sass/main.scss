@@ -18,7 +18,8 @@ $font-color1: #3f7a71;
 }
 
 .container {
-  min-height: 80vh;
+  width: 90%;
+  min-height: 90vh;
   background-color: $container-color;
   color: $font-color1;
   padding: 1rem;

@@ -6,9 +6,9 @@ class Footer extends LitElement {
     .footer {
       background-color: #333e4e;
       color: #fff;   
-      padding-block: 1rem;
+      padding-block: 0.45rem;
       text-align: center;
-      min-height: 10vh;
+      min-height: 5vh;
     }
   `;
  

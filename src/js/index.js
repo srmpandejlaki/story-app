@@ -2,7 +2,7 @@
 import '../sass/main.scss';
 
 // Import our custom components
-import './components/header';
+import './components/navbar';
 import './components/storyItem';
 import './components/footer';
 
