@@ -2,6 +2,10 @@ import { LitElement, html, css } from 'lit';
 
 class Navbar extends LitElement {
   static styles = css`
+    :host {
+      display: block;
+    }
+  
     section {
       position: absolute;
       left: 0;
@@ -47,7 +51,7 @@ class Navbar extends LitElement {
 
     p {
       text-align: center;
-      font-size: 0.65rem;
+      font-size: 0.7rem;
     }
   `;
  
