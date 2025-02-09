@@ -13,21 +13,14 @@ const Dashboard = {
         ? responseRecords.listStory
         : [];
 
-      this._populateStoryRecordToTable(this._userStoryHistory);
-      this._populateStoryDataToCard(this._userStoryHistory);
+      this._theListStories(this._userStoryHistory);
     } catch (error) {
       console.error("Error fetching data:", error);
       this._userStoryHistory = [];
     }
   },
 
-  _populateStoryDataToCard(listStory = []) {
-    if (!Array.isArray(listStory)) {
-      throw new Error('Parameter listStory harus berupa array.');
-    }
-  },
-
-  _populateStoryRecordToTable(listStory = []) {
+  _theListStories(listStory = []) {
     if (!Array.isArray(listStory)) {
       throw new Error('Parameter listStory harus berupa array.');
     }
@@ -46,18 +39,33 @@ const Dashboard = {
       return;
     }
 
-    listStory.forEach((item, idx) => {
+    listStory.forEach((item) => {
       recordListsStory.innerHTML += this._templateListsStory(item);
     });
   },
 
   _templateListsStory(item) {
+    let formattedDate = "Tanggal tidak tersedia";
+    if (item.createdAt) {
+      const date = new Date(item.createdAt);
+      if (!isNaN(date.getTime())) {
+        formattedDate = date.toLocaleDateString('id-ID', {
+          weekday: 'long',
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric'
+        });
+      }
+    }
+    
     return `
       <div id="${item.id}" class="storyItem">
         <img class="storyImage" src="${item.photoUrl}" alt="story image">
-        <h2 class="storyName">${item.name}</h2>
-        <p class="storyDesc">${item.description}</p>
-        <p class="storyDesc">${item.createdAt}</p>
+        <div class="storyDesc">
+          <h2 class="storyName">${item.name}</h2>
+          <p>${item.description}</p>
+          <p>${formattedDate}</p>
+        </div>
       </div>
     `;
   },

@@ -7,7 +7,7 @@ class Navbar extends LitElement {
     }
   
     section {
-      position: absolute;
+      position: fixed;
       left: 0;
       top: 0;
       background-color: #333e4e;
