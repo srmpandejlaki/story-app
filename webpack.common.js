@@ -44,7 +44,17 @@ module.exports = {
       title: 'Home',
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/views/index.html'),
-      }
+      },
+      {
+      title: 'Form',
+      filename: 'form.html',
+      template: path.resolve(__dirname, 'src/views/form.html'),
+      },
+      {
+      title: 'Developer',
+      filename: 'developer.html',
+      template: path.resolve(__dirname, 'src/views/developer.html'),
+      },
     ),
 
     new CopyWebpackPlugin({

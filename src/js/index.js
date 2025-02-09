@@ -1,4 +1,5 @@
-// Import custom CSS
+// Import custom styling
+import * as bootstrap from 'bootstrap';
 import '../sass/main.scss';
 
 // Import custom components
