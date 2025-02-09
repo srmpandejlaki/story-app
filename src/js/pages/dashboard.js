@@ -2,64 +2,66 @@ const Dashboard = {
   async init() {
     await this._initialData();
   },
- 
+
   async _initialData() {
-    const fetchRecords = await fetch('/data/data-story.json');
-    const responseRecords = await fetchRecords.json();
-    this._userStoryHistory = responseRecords.listStory;
-    this._populateStoryRecordToTable(this._userStoryHistory);
-    this._populateStoryDataToCard(this._userStoryHistory);
-  },
- 
-  _populateStoryDataToCard(listStory = null) {
-    if (!(typeof listStory === 'object')) {
-      throw new Error(
-          `Parameter responseRecords should be an object.`,
-      );
-    }
- 
-    if (!Array.isArray(listStory)) {
-      throw new Error('Parameter transactionsHistory should be an array.');
+    try {
+      const fetchRecords = await fetch('/data/data-story.json');
+      const responseRecords = await fetchRecords.json();
+
+      // Pastikan listStory ada dan berupa array
+      this._userStoryHistory = Array.isArray(responseRecords.listStory)
+        ? responseRecords.listStory
+        : [];
+
+      this._populateStoryRecordToTable(this._userStoryHistory);
+      this._populateStoryDataToCard(this._userStoryHistory);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      this._userStoryHistory = [];
     }
   },
- 
-  _populateStoryRecordToTable(listStory = null) {
-    if (!(typeof listStory === 'object')) {
-      throw new Error(
-        `Parameter transactionsHistory should be an object. The value is ${listStory}`,
-      );
-    }
- 
+
+  _populateStoryDataToCard(listStory = []) {
     if (!Array.isArray(listStory)) {
-      throw new Error(
-        `Parameter transactionsHistory should be an array. The value is ${listStory}`,
-      );
+      throw new Error('Parameter listStory harus berupa array.');
     }
- 
+  },
+
+  _populateStoryRecordToTable(listStory = []) {
+    if (!Array.isArray(listStory)) {
+      throw new Error('Parameter listStory harus berupa array.');
+    }
+
     const recordListsStory = document.querySelector('#listStory');
- 
+
+    if (!recordListsStory) {
+      console.error("Elemen dengan id 'listStory' tidak ditemukan.");
+      return;
+    }
+
     recordListsStory.innerHTML = '';
-    if (listStory.length <= 0) {
+    
+    if (listStory.length === 0) {
       recordListsStory.innerHTML = this._templateEmptyListsStory();
       return;
     }
- 
+
     listStory.forEach((item, idx) => {
-      recordListsStory.innerHTML += this._templateListsStory(idx, listStory[idx]);
+      recordListsStory.innerHTML += this._templateListsStory(item);
     });
   },
- 
-  _templateListsStory(listStory) {
+
+  _templateListsStory(item) {
     return `
-      <div id="${listStory.id}" class="storyItem">
-        <img class="storyImage" src="${listStory.photoUrl}" alt="story image">
-        <h2 class="storyName">${listStory.name}</h2>
-        <p class="storyDesc">${listStory.description}</p>
-        <p class="storyDesc">${listStory.createdAt}</p>
+      <div id="${item.id}" class="storyItem">
+        <img class="storyImage" src="${item.photoUrl}" alt="story image">
+        <h2 class="storyName">${item.name}</h2>
+        <p class="storyDesc">${item.description}</p>
+        <p class="storyDesc">${item.createdAt}</p>
       </div>
     `;
   },
- 
+
   _templateEmptyListsStory() {
     return `
       <div class="storyItem">
@@ -68,5 +70,5 @@ const Dashboard = {
     `;
   },
 };
- 
+
 export default Dashboard;
