@@ -57,16 +57,16 @@ class Navbar extends LitElement {
  
   render() {
     return html`
-      <section>
+      <section id="navbar">
         <nav>
           <div class="titleBrand">
             <img src="favicon.png" alt="Story App Logo" />
             <h1>My Story App</h1>
           </div>
           <ul class="navLinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Form</a></li>
-            <li><a href="#">Developer</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/form">Form</a></li>
+            <li><a href="/dashboard">Developer</a></li>
           </ul>
         </nav>
         <div class="footer">

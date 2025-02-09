@@ -1,8 +1,35 @@
-// Import our custom CSS
+// Import custom CSS
 import '../sass/main.scss';
 
-// Import our custom components
+// Import custom components
 import './components/navbar';
 import './components/storyItem';
 
-console.log('Do your work here!');
+// Import pages
+import Dashboard from './pages/dashboard';
+import Form from './pages/form';
+import Developer from './pages/developer';
+
+const routes = {
+  '/': Dashboard,
+  '/form': Form,
+  '/developer': Developer,
+};
+ 
+const detectRoute = () => routes[window.location.pathname];
+ 
+const initPages = () => {
+  const navbar = document.querySelector('#navbar');
+  const main = document.querySelector('main');
+ 
+  if (navbar && main) {
+    main.style.minWidth = `calc(100% - ${navbar.clientHeight}px)`;
+  }
+};
+ 
+window.addEventListener('DOMContentLoaded', async () => {
+  initPages();
+ 
+  const route = detectRoute();
+  route.init();
+});
