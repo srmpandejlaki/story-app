@@ -13,8 +13,8 @@ import Developer from './pages/developer';
 
 const routes = {
   '/': Dashboard,
-  '/form': Form,
-  '/developer': Developer,
+  '/pages/form.html': Form,
+  '/pages/developer.html': Developer,
 };
  
 const detectRoute = () => routes[window.location.pathname];
