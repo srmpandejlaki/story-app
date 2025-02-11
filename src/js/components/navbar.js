@@ -65,8 +65,8 @@ class Navbar extends LitElement {
           </div>
           <ul class="navLinks">
             <li><a href="/">Home</a></li>
-            <li><a href="./pages/form.html">Form</a></li>
-            <li><a href="./pages/developer.html">Developer</a></li>
+            <li><a href="/views/form.html">Form</a></li>
+            <li><a href="/views/developer.html">Developer</a></li>
           </ul>
         </nav>
         <div class="footer">
