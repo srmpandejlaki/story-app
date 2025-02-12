@@ -9,7 +9,7 @@ const htmlWebpackPluginConfig = {
     'theme-color': '#4285f4',
   },
   templateParameters: {
-    brandName: 'Money Tracker App',
+    brandName: 'My Story App',
   },
 };
 
