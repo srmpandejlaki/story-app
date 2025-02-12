@@ -1,63 +1,13 @@
 import { LitElement, html, css } from 'lit';
 
 class Navbar extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-    }
-  
-    section {
-      position: fixed;
-      left: 0;
-      top: 0;
-      background-color: #333e4e;
-      color: #fff;
-      height: 100vh;
-      width: 10%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-inline: 1rem;
-    }
-
-    
-    .titleBrand {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-
-      img {
-        width: 30px;
-      }
-
-      h1 {
-        font-size: 1rem;
-      }
-    }
-
-    .navLinks {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      list-style: none;
-      padding: 1rem;
-    
-      a {
-        text-decoration: none;
-        color: #fff;
-      }
-    }
-
-    p {
-      text-align: center;
-      font-size: 0.7rem;
-    }
-  `;
+  createRenderRoot() {
+    return this;
+  }
  
   render() {
     return html`
-      <section id="navbar">
+      <section class="navbar" id="navbar">
         <nav>
           <div class="titleBrand">
             <img src="favicon.png" alt="Story App Logo" />

@@ -19,6 +19,54 @@ $font-color1: #3f7a71;
   padding: 0;
 }
 
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: $dark-color;
+  color: $defaultFont-color;
+  height: 100vh;
+  width: 10%;
+
+  @include flexGroup();
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+    
+.titleBrand {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  img {
+    width: 30px;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+}
+
+.navLinks {
+  @include flexGroup();
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem;
+    
+  a {
+    text-decoration: none;
+    color: $defaultFont-color;
+  }
+}
+
+.footer {
+  p {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+}
+
 .container {
   width: 85%;
   position: absolute;

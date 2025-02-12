@@ -5,6 +5,7 @@ import '../sass/main.scss';
 // Import custom components
 import './components/navbar';
 import './components/storyItem';
+import './components/formData'
 
 // Import pages
 import Dashboard from './pages/dashboard';

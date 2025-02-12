@@ -7,23 +7,8 @@ class StoryItem extends LitElement {
     description: { type: String },
   };
 
-  static styles = css `
-    .storyItem {
-      width: 200px;
-      border: 1px solid #333e4e;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .storyImage {
-        width: 150px;
-      }
-    }
-  `;
- 
-  constructor() {
-    super();
-    this.name = 'Belajar reactive property di Lit component';
+  createRenderRoot() {
+    return this; // return this to enable shadow DOM
   }
  
   render() {
