@@ -4,7 +4,7 @@ import '../sass/main.scss';
 
 // Import custom components
 import './components/navbar';
-import './components/storyItem';
+import './components/words';
 import './components/formData'
 import './components/infoDev';
 import './components/socialDev'
