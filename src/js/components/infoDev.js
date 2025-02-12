@@ -1,0 +1,19 @@
+import { LitElement, html } from 'lit';
+
+class infoDeveloper extends LitElement {
+  createRenderRoot() {
+    return this;
+  }
+
+  render() {
+    return html`
+      <article class="info">
+        <h2>Sesilia Pandejlaki</h2>
+        <p>Mahasiswa</p>
+        <p>Asal: Manado, Indonesia</p>
+      </article>
+    `;
+  }
+}
+
+customElements.define('info-developer', infoDeveloper);
