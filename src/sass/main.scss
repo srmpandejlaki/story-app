@@ -92,6 +92,18 @@ $font-color1: #3f7a71;
   }
 }
 
+.link {
+  a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: white;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 .picture {
   display: flex;
   justify-content: center;
