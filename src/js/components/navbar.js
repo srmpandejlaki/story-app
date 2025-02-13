@@ -1,9 +1,57 @@
-import { LitElement, html} from 'lit';
+import { LitElement, html, css} from 'lit';
 
 class Navbar extends LitElement {
-  createRenderRoot() {
-    return this;
-  }
+  static styles = css `
+    .navbar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: #333e4e;
+      color: white;
+      height: 100vh;
+      width: 10%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-inline: 1rem;
+    }
+
+        
+    .titleBrand {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      img {
+        width: 30px;
+      }
+
+      h1 {
+        font-size: 1rem;
+      }
+    }
+
+    .navLinks {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      list-style: none;
+      padding: 1rem;
+        
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    .footer {
+      p {
+        text-align: center;
+        font-size: 0.7rem;
+      }
+    }
+  `;
  
   render() {
     return html`

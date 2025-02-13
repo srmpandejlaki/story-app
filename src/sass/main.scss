@@ -2,14 +2,18 @@
 
 /* variables */ 
 $dark-color: #333e4e;
-$container-color: #fff;
-$defaultFont-color: #fff;
+$default-color: #fff;
 $font-color1: #3f7a71;
 
 /* mixins */
 @mixin flexGroup {
   display: flex;
   flex-direction: column;
+}
+
+@mixin colorGroup {
+  background-color: $dark-color;
+  color: $default-color;
 }
 
 /* styles */
@@ -19,60 +23,12 @@ $font-color1: #3f7a71;
   padding: 0;
 }
 
-.navbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: $dark-color;
-  color: $defaultFont-color;
-  height: 100vh;
-  width: 10%;
-
-  @include flexGroup();
-  justify-content: space-between;
-  padding-inline: 1rem;
-}
-
-    
-.titleBrand {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-
-  img {
-    width: 30px;
-  }
-
-  h1 {
-    font-size: 1rem;
-  }
-}
-
-.navLinks {
-  @include flexGroup();
-  gap: 2rem;
-  list-style: none;
-  padding: 1rem;
-    
-  a {
-    text-decoration: none;
-    color: $defaultFont-color;
-  }
-}
-
-.footer {
-  p {
-    text-align: center;
-    font-size: 0.7rem;
-  }
-}
-
 .container {
   width: 85%;
   position: absolute;
   top: 0;
   left: 15%;
-  background-color: $container-color;
+  background-color: $default-color;
   color: $font-color1;
   padding: 1rem;
 }
@@ -108,10 +64,9 @@ $font-color1: #3f7a71;
 }
 
 .info {
-  background-color: #333e4e;
+  background-color: $dark-color;
   color: white;
-  display: flex;
-  flex-direction: column;
+  @include flexGroup();
   align-items: center;
   border-radius: 8px;
   padding: 1rem;
@@ -128,9 +83,8 @@ $font-color1: #3f7a71;
 }
 
 .social {
-  background-color: $dark-color;
+  @include colorGroup();
   border-radius: 8px;
-  color: $defaultFont-color;
   padding: 1rem;
 
   h2 {
@@ -140,6 +94,6 @@ $font-color1: #3f7a71;
 
 .picture {
   display: flex;
-  align-items: center;
+  justify-content: center;
   padding: 1rem;
 }

@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
 
 class infoDeveloper extends LitElement {
   createRenderRoot() {
