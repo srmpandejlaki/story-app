@@ -106,3 +106,40 @@ $font-color1: #3f7a71;
     gap: 0.5rem;
   }
 }
+
+.info {
+  background-color: #333e4e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  padding: 1rem;
+
+  h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+.social {
+  background-color: $dark-color;
+  border-radius: 8px;
+  color: $defaultFont-color;
+  padding: 1rem;
+
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+.picture {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}

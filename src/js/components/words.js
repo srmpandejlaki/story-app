@@ -6,6 +6,7 @@ class WordSection extends LitElement {
       p {
         margin-top: -1rem;
         font-size: 1.2rem;
+        line-height: 1;
       }
     }
   `;
