@@ -29,7 +29,7 @@ class formData extends LitElement {
           </div>
             
           <div class="col-12 text-end">
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-dark btn-border-radius-sm" type="submit">Submit</button>
           </div>
         </form>
       </div>
