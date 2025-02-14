@@ -1,20 +1,8 @@
 @use 'vendors';
+@use 'developer';
 
 /* variables */ 
-$dark-color: #333e4e;
-$default-color: #fff;
 $font-color1: #3f7a71;
-
-/* mixins */
-@mixin flexGroup {
-  display: flex;
-  flex-direction: column;
-}
-
-@mixin colorGroup {
-  background-color: $dark-color;
-  color: $default-color;
-}
 
 /* styles */
 * {
@@ -28,7 +16,7 @@ $font-color1: #3f7a71;
   position: absolute;
   top: 0;
   left: 15%;
-  background-color: $default-color;
+  background-color: developer.$default-color;
   color: $font-color1;
   padding: 1rem;
 }
@@ -41,9 +29,9 @@ $font-color1: #3f7a71;
 }
 
 .storyItem {
-  border: 1px solid #333e4e;
+  border: 1px solid developer.$dark-color;
   border-radius: 4px;
-  @include flexGroup();
+  @include developer.flexGroup;
   align-items: center;
 
   .storyImage {
@@ -58,54 +46,7 @@ $font-color1: #3f7a71;
   .storyDesc {
     padding: 1rem;
     line-height: 1.5;
-    @include flexGroup();
+    @include developer.flexGroup;
     gap: 0.5rem;
   }
-}
-
-.info {
-  background-color: $dark-color;
-  color: white;
-  @include flexGroup();
-  align-items: center;
-  border-radius: 8px;
-  padding: 1rem;
-
-  h2 {
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  p {
-    font-size: 1rem;
-    text-align: center;
-  }
-}
-
-.social {
-  @include colorGroup();
-  border-radius: 8px;
-  padding: 1rem;
-
-  h2 {
-    font-size: 1rem;
-  }
-}
-
-.link {
-  a {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: white;
-
-    :hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.picture {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
 }

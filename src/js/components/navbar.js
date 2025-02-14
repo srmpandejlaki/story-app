@@ -42,6 +42,10 @@ class Navbar extends LitElement {
       a {
         text-decoration: none;
         color: white;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
