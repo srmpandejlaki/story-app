@@ -49,8 +49,8 @@ $btn-border-radius-lg: btn.$border-radius-lg;
 // Komponen-Komponen
 @import '~bootstrap/scss/buttons';
 @import '~bootstrap/scss/forms';
-@import '~bootstrap/scss/nav';
-@import '~bootstrap/scss/navbar'; // Requires nav
+@import '~bootstrap/scss/alert';
+@import '~bootstrap/scss/placeholder';
 @import '~bootstrap/scss/card';
 
 //
