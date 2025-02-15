@@ -48,8 +48,10 @@ $btn-border-radius-lg: btn.$border-radius-lg;
 
 // Komponen-Komponen
 @import '~bootstrap/scss/buttons';
-@import '~bootstrap/scss/tables';
 @import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar'; // Requires nav
+@import '~bootstrap/scss/card';
 
 //
 // Utilities API untuk menghasilkan utility classes
