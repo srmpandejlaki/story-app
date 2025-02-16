@@ -1,10 +1,7 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
 
-class socialDev extends LitElement {
-  createRenderRoot() {
-    return this;
-  }
-
+class socialDev extends LitWithoutShadowDom {
   render() {
     return html`
       <article class="social">

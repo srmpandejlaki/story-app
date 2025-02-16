@@ -1,3 +1,5 @@
+import Auth from '../../network/auth';
+
 const Login = {
   async init() {
     this._initialListener();
@@ -24,6 +26,17 @@ const Login = {
     if (this._validateFormData({ ...formData })) {
       console.log('formData');
       console.log(formData);
+
+      try {
+        const response = await Auth.login({
+          email: formData.email,
+          password: formData.password,
+        });
+        window.alert('Signed user in detected');
+        this._goToDashboardPage();
+      } catch (error) {
+        console.error(error);
+      }
     }
   },
  

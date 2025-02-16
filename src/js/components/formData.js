@@ -1,6 +1,7 @@
-import { LitElement, html } from 'lit';
+import { html } from 'lit';
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
  
-class formData extends LitElement {
+class formData extends LitWithoutShadowDom {
   createRenderRoot() {
     return this;
   }

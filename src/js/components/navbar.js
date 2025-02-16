@@ -1,8 +1,11 @@
-import { LitElement, html } from 'lit';
+import { html } from 'lit';
+import LitWithoutShadowDom from './base/LitWithoutShadowDom';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
-class Navbar extends LitElement {
-  createRenderRoot() {
-    return this;
+class NavLinks extends LitWithoutShadowDom {
+  constructor() {
+    super();
+    updateWhenLocaleChanges(this);
   }
  
   render() {
@@ -14,11 +17,11 @@ class Navbar extends LitElement {
             <h1>My Story App</h1>
           </div>
           <ul class="navLinks">
-            <li><a href="/">Home</a></li>
-            <li><a href="/views/form.html">Form</a></li>
-            <li><a href="/views/developer.html">Developer</a></li>
+            <nav-link nav-link content="${msg(`Home`)}" to="/"></nav-link>
+            <nav-link nav-link content="${msg(`Form`)}" to="/views/form.html"></nav-link>
+            <nav-link nav-link content="${msg(`Developer`)}" to="/views/developer.html"></nav-link>
             <nav-link-auth class="d-none" id="userLoggedMenu"></nav-link-auth>
-            <nav-link content="${msg(`Masuk`)}" to="/auth/login.html" id="loginMenu"></nav-link>
+            <nav-link nav-link content="${msg(`Masuk`)}" to="/auth/login.html" id="loginMenu"></nav-link>
           </ul>
         </nav>
         <div class="footer">

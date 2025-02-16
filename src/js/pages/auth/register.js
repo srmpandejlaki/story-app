@@ -1,3 +1,5 @@
+import Auth from '../../network/auth';
+
 const Register = {
   async init() {
     this._initialListener();
@@ -25,6 +27,18 @@ const Register = {
     if (this._validateFormData({ ...formData })) {
       console.log('formData');
       console.log(formData);
+
+      try {
+        const response = await Auth.register({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        });
+        window.alert('Registered a new user');
+        this._goToLoginPage();
+      } catch (error) {
+        console.error(error);
+      }
     }
   },
  
