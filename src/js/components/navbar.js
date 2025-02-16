@@ -1,61 +1,9 @@
-import { LitElement, html, css} from 'lit';
+import { LitElement, html } from 'lit';
 
 class Navbar extends LitElement {
-  static styles = css `
-    .navbar {
-      position: fixed;
-      left: 0;
-      top: 0;
-      background-color: #333e4e;
-      color: white;
-      height: 100vh;
-      width: 10%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-inline: 1rem;
-    }
-
-        
-    .titleBrand {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-
-      img {
-        width: 30px;
-      }
-
-      h1 {
-        font-size: 1rem;
-      }
-    }
-
-    .navLinks {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      list-style: none;
-      padding: 1rem;
-        
-      a {
-        text-decoration: none;
-        color: white;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    .footer {
-      p {
-        text-align: center;
-        font-size: 0.7rem;
-      }
-    }
-  `;
+  createRenderRoot() {
+    return this;
+  }
  
   render() {
     return html`
@@ -69,6 +17,8 @@ class Navbar extends LitElement {
             <li><a href="/">Home</a></li>
             <li><a href="/views/form.html">Form</a></li>
             <li><a href="/views/developer.html">Developer</a></li>
+            <nav-link-auth class="d-none" id="userLoggedMenu"></nav-link-auth>
+            <nav-link content="${msg(`Masuk`)}" to="/auth/login.html" id="loginMenu"></nav-link>
           </ul>
         </nav>
         <div class="footer">
