@@ -13,11 +13,16 @@ import './components/socialDev'
 import Dashboard from './pages/dashboard';
 import Form from './pages/form';
 import Developer from './pages/developer';
+import Register from './pages/auth/register';
+import Login from './pages/auth/login';
 
 const routes = {
   '/': Dashboard,
   '/views/form.html': Form,
   '/views/developer.html': Developer,
+
+  '/views/auth/register.html': Register,
+  '/views/auth/login.html': Login,
 };
  
 const detectRoute = () => routes[window.location.pathname];
