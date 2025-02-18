@@ -9,6 +9,7 @@ import './components/formData'
 import './components/infoDev';
 import './components/socialDev'
 import './components/itemPlaceholder';
+import './components/navLinkAuth';
 
 // Import pages
 import Dashboard from './pages/dashboard';

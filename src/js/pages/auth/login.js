@@ -1,7 +1,11 @@
 import Auth from '../../network/auth';
+import CheckUserAuth from './check-user-auth';
+import Config from '../../config/config';
+import Utils from '../../utils/utils';
 
 const Login = {
   async init() {
+    CheckUserAuth.checkLoginState();
     this._initialListener();
   },
  
@@ -32,6 +36,7 @@ const Login = {
           email: formData.email,
           password: formData.password,
         });
+        Utils.setUserToken(Config.USER_TOKEN_KEY, response.data.results.token);
         window.alert('Signed user in detected');
         this._goToDashboardPage();
       } catch (error) {

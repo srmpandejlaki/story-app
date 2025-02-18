@@ -2,9 +2,6 @@ import { html } from 'lit';
 import LitWithoutShadowDom from './base/LitWithoutShadowDom';
  
 class formData extends LitWithoutShadowDom {
-  createRenderRoot() {
-    return this;
-  }
   render() {
     return html`
       <div class="py-5">

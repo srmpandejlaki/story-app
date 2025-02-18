@@ -22,6 +22,10 @@ $font-color1: #3f7a71;
   padding: 1rem;
 }
 
+.container1 {
+  width: 100%;
+}
+
 .listStory {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

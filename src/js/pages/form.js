@@ -1,5 +1,8 @@
+import CheckUserAuth from './auth/check-user-auth';
+
 const Form = {
   async init() {
+    CheckUserAuth.checkLoginState();
     this._initialListener();
   },
  
