@@ -1,5 +1,9 @@
+import CheckUserAuth from './auth/check-user-auth';
+
 const Developer = {
-  async init() {},
+  async init() {
+    CheckUserAuth.checkLoginState();
+  },
 };
  
 export default Developer;

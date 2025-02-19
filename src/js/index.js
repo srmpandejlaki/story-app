@@ -22,12 +22,12 @@ const routes = {
   '/': Dashboard,
   '/views/form.html': Form,
   '/views/developer.html': Developer,
-
   '/views/auth/register.html': Register,
   '/views/auth/login.html': Login,
 };
  
 const detectRoute = () => routes[window.location.pathname];
+console.log(detectRoute);
  
 const initPages = () => {
   const navbar = document.querySelector('#navbar');
