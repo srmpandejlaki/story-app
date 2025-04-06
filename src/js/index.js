@@ -20,14 +20,13 @@ import Login from './pages/auth/login';
 
 const routes = {
   '/': Dashboard,
-  '/views/form.html': Form,
-  '/views/developer.html': Developer,
-  '/views/auth/register.html': Register,
-  '/views/auth/login.html': Login,
+  '/form.html': Form,
+  '/developer.html': Developer,
+  '/auth/register.html': Register,
+  '/auth/login.html': Login,
 };
  
 const detectRoute = () => routes[window.location.pathname];
-console.log(detectRoute);
  
 const initPages = () => {
   const navbar = document.querySelector('#navbar');
@@ -40,7 +39,12 @@ const initPages = () => {
  
 window.addEventListener('DOMContentLoaded', async () => {
   initPages();
- 
+
   const route = detectRoute();
-  route.init();
+  if (route && typeof route.init === 'function') {
+    route.init();
+  } else {
+    console.warn('Route tidak ditemukan atau init() tidak tersedia untuk:', window.location.pathname);
+  }
 });
+
