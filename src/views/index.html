@@ -1,28 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-
-    <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
-  </head>
-  <body>
-    <main>
-      <navbar-section></navbar-section>
-      
-      <section class="container">
-        <!-- Your story content -->
-          <words-section></words-section>
-          <div class="alert alert-primary" role="alert">
-            Mari lihat kembali kenangan yang tersimpan pada list dibawah ini...
-          </div>
-          <section id="listStory" class="listStory">
-            <item-placeholder></item-placeholder>
-          </section>
-      </section>
-    </main>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Notes</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/index.jsx"></script>
+</body>
 </html>
+
