@@ -36,7 +36,9 @@ const Login = {
           email: formData.email,
           password: formData.password,
         });
-        Utils.setUserToken(Config.USER_TOKEN_KEY, response.data.results.token);
+        console.log('Login response:', response);
+
+        Utils.setUserToken(Config.USER_TOKEN_KEY, response.token);
         window.alert('Signed user in detected');
         this._goToDashboardPage();
       } catch (error) {
@@ -48,7 +50,6 @@ const Login = {
   _getFormData() {
     const email = document.querySelector('#validationCustomRecordEmail');
     const password = document.querySelector('#validationCustomPassword');
- 
     return {
       email: email.value,
       password: password.value,
