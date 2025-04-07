@@ -10,6 +10,7 @@ import './components/infoDev';
 import './components/socialDev'
 import './components/itemPlaceholder';
 import './components/navLinkAuth';
+import './components/inputWithValidation';
 
 // Import pages
 import Dashboard from './pages/dashboard';
