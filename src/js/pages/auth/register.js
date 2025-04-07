@@ -39,7 +39,8 @@ const Register = {
         window.alert('Registered a new user');
         this._goToLoginPage();
       } catch (error) {
-        console.error(error);
+        console.error('Register error:', error.response?.data || error.message);
+        alert(error.response?.data?.message || 'Terjadi kesalahan saat registrasi.');
       }
     }
   },
