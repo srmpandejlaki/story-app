@@ -7,18 +7,30 @@ const Dashboard = {
   },
 
   async _initialData() {
-    try {
-      const fetchRecords = await fetch('/data/data-story.json');
-      const responseRecords = await fetchRecords.json();
+  try {
+    const token = localStorage.getItem('token');
+    const response = await fetch('https://story-api.dicoding.dev/v1/stories?page=1&size=20&location=0', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    });
 
-      // Pastikan listStory ada dan berupa array
-      this._userStoryHistory = Array.isArray(responseRecords.listStory)
-        ? responseRecords.listStory
-        : [];
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-      this._theListStories(this._userStoryHistory);
+    const data = await response.json();
+    console.log('Data dari API:', data);
+
+    this._userStoryHistory = Array.isArray(data.listStory)
+      ? data.listStory
+      : [];
+
+    this._theListStories(this._userStoryHistory);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error fetching data from API:", error);
       this._userStoryHistory = [];
     }
   },
